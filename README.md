@@ -1,121 +1,97 @@
-
-# InternSync: Internship Activity Monitoring Portal
+# Gamer's Database
 
 ## Table of Contents
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
+- [Introduction](#introduction)
+- [Key Features](#key-features)
+- [Technical Overview](#technical-overview)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Architecture](#architecture)
-- [Modules](#modules)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
 
-## Project Overview
-InternSync is a web and mobile platform designed to streamline the management and tracking of internship activities for interns, college mentors, and company mentors during the eighth semester. It replaces traditional Excel-based systems by centralizing the submission and review of daily reports, allowing interns to submit their internship details and daily progress directly through the platform.
+## Introduction
+Gamer's Database is a web-based application designed to revolutionize how gamers manage their video game collections. With a user-friendly interface and integration with a game database API, it allows users to curate, categorize, and showcase their games across various platforms and genres. This platform is ideal for both casual and dedicated gamers, enhancing their gaming experience and fostering community connections.
 
-## Features
-- **Centralized Reporting**: Interns can submit daily reports directly on the platform.
-- **Automated Summaries**: College mentors receive weekly performance summaries via analytics dashboards.
-- **Hierarchical Access**: Different access levels for administrative functions and department-level management.
-- **Mobile Application**: A mobile app for students and college mentors that mirrors the functionalities of the web platform.
-- **Key Modules**: Attendance Management, Daily Report Submission, Internship Management, College Mentor Assignment, and Company Mentor Assignment.
+## Key Features
+- **User Accounts**: Personalized management of game collections.
+- **Game Catalog Integration**: Access detailed game information, including titles, genres, and ratings.
+- **Collection Organization**: Efficient categorization of games for easy access.
+- **Progress Tracking**: Visual monitoring of game completion status (Not Started, In Progress, Completed).
+- **Social Engagement**: Share collections and connect with friends.
+- **Customizable Management**: Personalize collection organization according to user preferences.
 
-## Technologies Used
-- **Frontend**: 
-  - Next.js (React framework)
-  - TypeScript (Typed JavaScript)
-  - Tailwind CSS (Utility-first CSS framework)
-- **Backend**: 
-  - Supabase (Backend as a Service with PostgreSQL)
-  - Node.js
-- **Mobile Development**: 
-  - Android Studio
-  - Kotlin (Programming language)
-  - Jetpack Compose (UI toolkit)
-- **Deployment**: 
-  - Vercel (Deployment platform)
+## Technical Overview
+Gamer's Database utilizes modern web technologies to provide a robust solution:
+- **Frontend**: Built using **Next.js**, **Tailwind CSS**, and **TypeScript** for a dynamic and responsive user experience.
+- **Backend**: Powered by **Node.js** and **Express** for handling requests, with **MongoDB** for data storage.
+- **Authentication**: Managed through **Next Auth** for secure user login and account management.
+
+
+| Technology      | Description                                   |
+|------------------|-----------------------------------------------|
+| Next.js          | React framework for building web applications |
+| Tailwind CSS     | Utility-first CSS framework for styling       |
+| Node.js          | JavaScript runtime for server-side code      |
+| Express          | Web framework for building APIs               |
+| MongoDB          | NoSQL database for flexible data storage      |
+| Next Auth        | Authentication library for Next.js            |
+
 
 ## Installation
-To set up the project locally, follow these steps:
+To set up the Gamer's Database project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/internsync.git
-   cd internsync
+   git clone https://github.com/Swaraj2004/gamers-database.git
+   cd gamersdb
    ```
 
-2. **Install dependencies**:
+2. **For setting Backend**
+   2.1 **Install dependencies**:
+   ```bash
+   cd server
+   pnpm install
+   ```
+
+   2.2. **Set up MongoDB**:
+   - Create a MongoDB account and set up a new database.
+   - Obtain your MongoDB connection string.
+
+   2.3. **Set up environment variables**:
+   Create a `.env` file in the web directory and add your MongoDB credentials:
+   ```
+   DATABASE_URI=your_mongodb_connection_string
+   NEWS_API_KEY=your_news_api_key
+   TWITCH_CLIENT_ID=your_twitch_app_client_id
+   TWITCH_APP_ACCESS_TOKEN=your_twitch_app_acess_token
+   ACCESS_TOKEN_SECRET=your_acess_token
+   REFRESH_TOKEN_SECRET=your_refresh_token
+   ```
+   **NOTE**
+   - For News Api key visit [News API](https://newsapi.org/)
+   - For Twitch Client ID Create a twitch developer account and create an application.
+   - For Generating Twitch App Acess Token Follow [IGDB API DOCS](https://api-docs.igdb.com/#authentication)
+
+   2.4. **Run the application**:
    For the web application:
    ```bash
-   cd web
-   npm install
+   pnpm dev
    ```
-
-   For the mobile application:
+4. **For setting Frontend**
+   3.1. **Install dependencies**:
    ```bash
-   cd mobile
-   ./gradlew build
+   cd client
+   pnpm install
+   ```
+   3.2. **Set up environment variables**:
+   Create a `.env.local` file in the web directory and add your MongoDB credentials:
+   ```
+   NEXT_PUBLIC_API_URL=your_backend_site_url
+   NEXTAUTH_SECRET=your_secret_key
+   NEXTAUTH_URL=your_client_site_url   
    ```
 
-3. **Set up environment variables**:
-   Create a `.env.local` file in the web directory and add your Supabase credentials:
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
-
-4. **Run the application**:
+   3.3. **Run the application**:
    For the web application:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
-   For the mobile application, open it in Android Studio and run it on an emulator or physical device.
-
-## Usage
-- **Interns**: Log in to submit daily reports, view progress, and manage internship details.
-- **College Mentors**: Monitor intern progress, provide feedback, and manage assignments.
-- **Company Mentors**: Supervise interns and evaluate their work.
-
-## Architecture
-The architecture of InternSync is designed to facilitate seamless communication and data flow between different user roles. It consists of three main layers:
-
-1. **Application Layer (Backend)**: Contains server-side logic, including authentication and database connectivity.
-2. **Presentation Layer (Frontend)**: The user interface built using Next.js.
-3. **Data Layer (Database)**: Managed by Supabase, storing all relevant data.
-
-![Proposed System Architecture](path/to/architecture-diagram.png)
-
-## Modules
-- **Login Modules**: For different user roles (Institute, Department, College Mentor, Company Mentor, Intern).
-- **Mentor Assignment Module**: Assigns mentors to students and tracks their progress.
-- **Internship Management Module**: Provides details about the internship program.
-- **Attendance Management Module**: Monitors intern attendance and compliance.
-- **Daily Report Submission Module**: Allows interns to submit daily reports.
-
-## Contributing
-Contributions are welcome! Please follow these steps to contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes and commit them (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-We would like to express our gratitude to our project supervisor, Prof. Akshay A Jadhav, for his guidance and support throughout this project. We also thank the Head of the Department, Dr. Monika Bhagwat, and the Principal, Dr. Sandeep Joshi, for their encouragement and resources.
-
----
-
-For more information, please refer to the [documentation](path/to/documentation).
-```
-
-### Notes:
-- Replace `https://github.com/yourusername/internsync.git` with the actual repository URL.
-- Update the path to the architecture diagram and documentation as necessary.
-- Ensure that the installation instructions are accurate and reflect the actual setup process for your project.
+Gamer's Database aims to create a vibrant community for gamers, making collection management enjoyable and interactive.
