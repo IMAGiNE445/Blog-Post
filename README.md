@@ -43,8 +43,9 @@ To set up the Gamer's Database project locally, follow these steps:
    cd gamersdb
    ```
 
-2. **For setting Backend**
-   2.1 **Install dependencies**:
+2. **For setting Backend**:
+   
+   2.1. **Install dependencies**:
    ```bash
    cd server
    pnpm install
@@ -74,7 +75,9 @@ To set up the Gamer's Database project locally, follow these steps:
    ```bash
    pnpm dev
    ```
-4. **For setting Frontend**
+   
+3. **For setting Frontend**:
+   
    3.1. **Install dependencies**:
    ```bash
    cd client
@@ -93,5 +96,3 @@ To set up the Gamer's Database project locally, follow these steps:
    ```bash
    pnpm dev
    ```
-
-Gamer's Database aims to create a vibrant community for gamers, making collection management enjoyable and interactive.
