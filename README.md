@@ -1,4 +1,4 @@
-# Gamer's Database
+# GamersDB
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -13,9 +13,9 @@ Gamer's Database is a web-based application designed to revolutionize how gamers
 - **User Accounts**: Personalized management of game collections.
 - **Game Catalog Integration**: Access detailed game information, including titles, genres, and ratings.
 - **Collection Organization**: Efficient categorization of games for easy access.
-- **Progress Tracking**: Visual monitoring of game completion status (Not Started, In Progress, Completed).
 - **Social Engagement**: Share collections and connect with friends.
-- **Customizable Management**: Personalize collection organization according to user preferences.
+- **Latest Gaming News**: Stay updated with real-time news on trending games, industry updates, and exclusive releases.
+- **Upcoming and recently Released**: View a curated list of newly released and upcoming games.
 
 ## Technical Overview
 Gamer's Database utilizes modern web technologies to provide a robust solution:
